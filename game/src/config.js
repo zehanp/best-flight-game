@@ -39,7 +39,7 @@ export const RUNWAY = {
 };
 
 export const WORLD = {
-  seaLevel: -4, // terrain below this is water
+  seaLevel: -12, // terrain below this is water
   viewDistance: 950, // metres of terrain drawn ahead
   terrainRows: 46, // depth strips in the terrain renderer
   terrainCols: 56, // samples across each strip
