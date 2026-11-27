@@ -32,7 +32,7 @@ export function terrainHeight(seed, x, z) {
   h += 48 * Math.max(0, noise2(s + 13, x * 0.002 + 9, z * 0.002)) * smoothstep(500, 1100, r);
   h *= runwayFlatten(x, z);
   h += 14; // lift the land
-  return 62 * Math.tanh(h / 62);
+  return 62 * Math.tanh(h * 0.5 / 62);
 }
 
 export function isWater(seed, x, z) {
