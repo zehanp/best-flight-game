@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Langit Biru — a flight game</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0b1c2c; height: 100%; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: system-ui, -apple-system, sans-serif; }
+  #wrap { position: relative; width: min(100vw, 1280px); }
+  canvas { display: block; width: 100%; height: auto; background: #79b5d9; touch-action: none; }
+  #bar { display: flex; gap: 8px; align-items: center; justify-content: space-between; width: min(100vw, 1280px); padding: 6px 10px; box-sizing: border-box; color: #cfe8f5; font-size: 13px; }
+  #bar button { background: #14506e; color: #fff; border: 1px solid #2b7ba0; border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
+  #bar button:hover { background: #1b6a90; }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="game" width="1280" height="720"></canvas></div>
+<div id="bar">
+  <span>Langit Biru — fly through the rings, then land on the runway. Arrows steer · W/S throttle · P pause · M mute · S screenshot</span>
+  <span><button id="shotBtn" type="button">📷 Save screenshot</button></span>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
