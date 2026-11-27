@@ -202,7 +202,7 @@ function stepPlaying(dt) {
   p.pitch += clamp(pitchTarget - p.pitch, -PHYSICS.pitchRate * dt, PHYSICS.pitchRate * dt);
   p.roll += clamp(rollTarget - p.roll, -PHYSICS.rollRate * dt, PHYSICS.rollRate * dt);
   p.heading += -Math.sin(p.roll) * PHYSICS.turnFactor * (p.speed / 60) * dt;
-  const targetSpeed = 40 + p.throttle * 95;
+  const targetSpeed = p.throttle * 95 + 40 * !p.grounded;
   p.speed += (targetSpeed - p.speed) * (1 - Math.exp(-0.35 * dt));
   p.speed += -Math.sin(p.pitch) * 16 * dt;
   p.speed = clamp(p.speed, 0, PHYSICS.maxSpeed);
