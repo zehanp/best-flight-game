@@ -38,7 +38,7 @@
 //   sourceImports(text)         a module's static import and export-from specifiers, in source order, by a
 //                               lexical scan (the gate's own check parses the module, see below)
 //   importOrder(sources, facts) the source scripts in the order the page loads them: index.html's scripts in
-//                               document order, a classic <script src> in document order, a module script (inline
+//                               document order, a classic <script src> where it stands, a module script (inline
 //                               or src) followed by a depth-first walk of its static imports, specifiers resolved
 //                               relative to the importer or through the import map, unresolvable or unmapped bare
 //                               specifiers skipped
@@ -598,7 +598,6 @@ export function isRelativeSpecifier(specifier: string): boolean {
 
 /**
  * The path under game/ that the relative reference `ref` names, resolved against the importing file's path
-
  * (`from`, POSIX and relative to game/, like `src/main.js`; index.html is `index.html`). A query or fragment is
  * dropped. Null when `ref` is not relative, names nothing, or climbs out of game/.
  */
